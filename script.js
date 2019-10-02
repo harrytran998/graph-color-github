@@ -1,3 +1,4 @@
+
 // ==UserScript==
 // @name         Graph Color Github
 // @namespace    http://tampermonkey.net/
@@ -10,10 +11,13 @@
 
 /*
  * You can get the colors which you like in https://www.materialui.co/colors
- */
+*/
 const newColors = ['#FAFAFA', '#BBDEFB', '#64B5F6', '#1E88E5', '#0D47A1']
 
+// Default color of Github
 let oldColors = ['#ebedf0', '#c6e48b', '#7bc96f', '#239a3b', '#196127']
+
+
 
 const applyColorToGraphActivities = color => {
   let rects = document.getElementsByTagName('rect')
@@ -38,11 +42,11 @@ const applyColorToGraphActivities = color => {
 const hex = x => ('0' + parseInt(x).toString(16)).slice(-2)
 
 const rgb2hex = rgb => {
-  rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/)
-  return '#' + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3])
+  rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+  return '#' + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
 }
 
-const applyColorToProgressBar = color => {
+const applyColorToContributionActivity = color => {
   let activityListing = document.getElementById('js-contribution-activity')
   if (activityListing) {
     let progress = document.getElementsByClassName('progress-bar')
@@ -57,8 +61,8 @@ const applyColorToProgressBar = color => {
   }
 }
 
-;(function() {
+(function () {
   'use strict'
   applyColorToGraphActivities(newColors)
-  applyColorToProgressBar(newColors)
+  applyColorToContributionActivity(newColors)
 })()
