@@ -19,7 +19,7 @@ let oldColors = ['#ebedf0', '#c6e48b', '#7bc96f', '#239a3b', '#196127']
 
 
 
-const applyColorToGraphActivities = color => {
+const fuckGraphActivities = color => {
   let rects = document.getElementsByTagName('rect')
   let legends = document.getElementsByClassName('legend')
 
@@ -46,11 +46,13 @@ const rgb2hex = rgb => {
   return '#' + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
 }
 
-const applyColorToContributionActivity = color => {
+const fuckContributionActivity = color => {
   let activityListing = document.getElementById('js-contribution-activity')
   if (activityListing) {
     let progress = document.getElementsByClassName('progress-bar')
     for (let i = 0, length = progress.length; i < length; i++) {
+      // progress[i].style.backgroundColor => RGB color
+      // So, must pass to hex color
       let backgroundColor = rgb2hex(progress[i].style.backgroundColor)
       for (let x = 0, y = oldColors.length; x < y; x++) {
         if (backgroundColor === oldColors[x]) {
@@ -63,6 +65,6 @@ const applyColorToContributionActivity = color => {
 
 (function () {
   'use strict'
-  applyColorToGraphActivities(newColors)
-  applyColorToContributionActivity(newColors)
+  fuckGraphActivities(newColors)
+  fuckContributionActivity(newColors)
 })()
