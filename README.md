@@ -2,6 +2,10 @@
 
 Change color in Graph contributions &amp; Contribution activity
 
+## Result
+
+![Imge](https://i.imgur.com/EibiF24.png)
+
 ## Guide
 
 1. Install [Tamplemonkey extension](Link: https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en)
